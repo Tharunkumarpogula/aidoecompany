@@ -1,0 +1,40 @@
+{
+  "placeholderImages": [
+    {
+      "id": "ceo",
+      "description": "Placeholder image for the CEO",
+      "imageUrl": "https://picsum.photos/seed/1/400/400",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "co-founder",
+      "description": "Placeholder image for the Co-founder",
+      "imageUrl": "https://picsum.photos/seed/2/400/400",
+      "imageHint": "professional portrait"
+    },
+    {
+      "id": "healthcare-tech",
+      "description": "Healthcare technology and AI tools",
+      "imageUrl": "https://picsum.photos/seed/3/800/600",
+      "imageHint": "modern medical technology"
+    },
+    {
+      "id": "medical-team",
+      "description": "Medical professionals using technology",
+      "imageUrl": "https://picsum.photos/seed/4/800/600",
+      "imageHint": "doctors with digital devices"
+    },
+    {
+      "id": "hospital-dashboard",
+      "description": "Hospital management dashboard",
+      "imageUrl": "https://picsum.photos/seed/5/1200/800",
+      "imageHint": "healthcare analytics dashboard"
+    },
+    {
+      "id": "patient-care",
+      "description": "Digital patient care solutions",
+      "imageUrl": "https://picsum.photos/seed/6/800/600",
+      "imageHint": "patient monitoring technology"
+    }
+  ]
+}
