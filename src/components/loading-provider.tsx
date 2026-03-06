@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState, createContext, useContext, useLayoutEffect } from 'react';
 import { LoadingScreen } from './loading-screen';
 
@@ -12,12 +12,11 @@ export function useLoading() {
 
 export function LoadingProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(true);
 
   useLayoutEffect(() => {
     setIsLoading(false);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   useEffect(() => {
     const handleStart = () => setIsLoading(true);

@@ -1,4 +1,3 @@
-import { generateDynamicIntro } from '@/ai/flows/dynamic-homepage-intro';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
 import React from 'react';
