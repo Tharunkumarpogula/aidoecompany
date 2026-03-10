@@ -44,6 +44,15 @@ export function Header() {
             <Link href="/about">About</Link>
           </Button>
           <Button variant="ghost" asChild>
+            <Link href="/request-demo">Request a Demo</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="/problem-statement">Problem Statement</Link>
+          </Button>
+          <Button variant="ghost" asChild>
+            <Link href="/solution">Solution</Link>
+          </Button>
+          <Button variant="ghost" asChild>
             <Link href="/why-aidoe">Why Aidoe?</Link>
           </Button>
           <Button variant="ghost" asChild>
@@ -63,12 +72,12 @@ export function Header() {
 
           <Button asChild>
             <Link
-              href="https://www.linkedin.com/company/aidoe"
+              href="https://in.linkedin.com/company/aidoe"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our LinkedIn"
             >
-              <LinkedInIcon className="h-6 w-6 text-black" />
+              <LinkedInIcon className="h-6 w-6" />
             </Link>
           </Button>
 

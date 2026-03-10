@@ -19,7 +19,7 @@ export async function TechSaaSSection() {
   const staticIntro = "Aidoe allows healthcare providers to adopt advanced technology efficiently, safely, and cost-effectively.";
   
   return (
-    <section id="features" className="bg-secondary/50 py-20 md:py-32 min-h-[calc(100vh-4rem)] flex items-center">
+    <section id="products" className="bg-secondary/50 py-20 md:py-32 min-h-[calc(100vh-4rem)] flex items-center">
       <div className="container fade-in max-w-6xl mx-auto">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold sm:text-4xl lg:text-5xl">

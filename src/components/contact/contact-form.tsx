@@ -37,16 +37,34 @@ const initialState: ContactFormState = {
   success: false,
 };
 
-function SubmitButton({ pending }: { pending: boolean }) {
+type SubmitButtonProps = {
+  pending: boolean;
+  label: string;
+  pendingLabel: string;
+};
+
+function SubmitButton({ pending, label, pendingLabel }: SubmitButtonProps) {
   return (
     <Button type="submit" disabled={pending} className="w-full transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/30 disabled:hover:scale-100 disabled:hover:shadow-none">
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
-      {pending ? 'Sending...' : 'Send Message'}
+      {pending ? pendingLabel : label}
     </Button>
   );
 }
 
-export function ContactForm() {
+export type ContactFormProps = {
+  title?: string;
+  description?: string;
+  submitLabel?: string;
+  submitPendingLabel?: string;
+};
+
+export function ContactForm({
+  title = 'Send us a message',
+  description = "Fill out the form below and we'll get back to you.",
+  submitLabel = 'Send Message',
+  submitPendingLabel = 'Sending...',
+}: ContactFormProps) {
   const [state, setState] = useState<ContactFormState>(initialState);
   const [pending, setPending] = useState(false);
   const { toast } = useToast();
@@ -92,22 +110,45 @@ export function ContactForm() {
       return;
     }
 
-    // Static hosting (GitHub Pages) has no server to receive this.
-    // We keep the UX identical and log to the browser console.
-    console.log('New contact form submission:', validatedFields.data);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(validatedFields.data),
+      });
 
-    setState({
-      message: 'Your message has been sent successfully! We will get back to you shortly.',
-      success: true,
-    });
-    setPending(false);
+      const payload = (await res.json().catch(() => null)) as
+        | { ok?: boolean; message?: string }
+        | null;
+
+      if (!res.ok || !payload?.ok) {
+        setState({
+          message: payload?.message ?? 'Failed to send message. Please try again.',
+          success: false,
+        });
+        setPending(false);
+        return;
+      }
+
+      setState({
+        message: 'Your message has been sent successfully! We will get back to you shortly.',
+        success: true,
+      });
+      setPending(false);
+    } catch {
+      setState({
+        message: 'Failed to send message. Please try again.',
+        success: false,
+      });
+      setPending(false);
+    }
   }
 
   return (
     <Card className="w-full group transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:shadow-primary/10">
       <CardHeader className="group-hover:bg-primary/5 transition-colors duration-300">
-        <CardTitle className="group-hover:text-primary transition-colors duration-300">Send us a message</CardTitle>
-        <CardDescription className="group-hover:text-foreground transition-colors duration-300">Fill out the form below and we'll get back to you.</CardDescription>
+        <CardTitle className="group-hover:text-primary transition-colors duration-300">{title}</CardTitle>
+        <CardDescription className="group-hover:text-foreground transition-colors duration-300">{description}</CardDescription>
       </CardHeader>
       <CardContent>
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
@@ -131,7 +172,7 @@ export function ContactForm() {
             <Textarea id="message" name="message" placeholder="Your message here..." required minLength={10} aria-describedby="message-error" className="transition-all duration-300 hover:border-primary focus:scale-[1.01] min-h-[120px]" />
             {state.errors?.message && <p id="message-error" className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
           </div>
-          <SubmitButton pending={pending} />
+          <SubmitButton pending={pending} label={submitLabel} pendingLabel={submitPendingLabel} />
         </form>
       </CardContent>
     </Card>

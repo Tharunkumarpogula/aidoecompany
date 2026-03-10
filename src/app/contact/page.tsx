@@ -35,7 +35,7 @@ export default function ContactPage() {
             </CardContent>
             <CardFooter>
               <Button asChild className="w-full transition-all duration-300 hover:scale-105 hover:shadow-lg group-hover:bg-primary group-hover:text-primary-foreground" variant="outline">
-                <Link href="mailto:contact@aidoe.com">Send Email</Link>
+                <Link href="mailto:aidoecompany@gmail.com">Send Email</Link>
               </Button>
             </CardFooter>
           </Card>

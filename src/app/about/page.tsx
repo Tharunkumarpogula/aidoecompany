@@ -29,7 +29,7 @@ export default function AboutPage() {
           Our mission
         </h1>
         <p className="mt-4 max-w-3xl text-center text-lg text-muted-foreground mx-auto text-animate text-animate-delay-1">
-          "Our mission is to make advanced healthcare technology accessible to every clinic and hospital. AI should empower doctors to deliver better, faster, and more precise care—not replace them. Aidoe bridges medical expertise and intelligent technology, keeping patient well-being at the center of every innovation."
+          Our mission is to bring advanced AI solutions to the medical industry, to every hospital and clinic. We envision a smart healthcare system powered by AI assistants, smart kiosks, and robotic technologies, to create a more connected and efficient healthcare ecosystem.
         </p>
       </div>
 

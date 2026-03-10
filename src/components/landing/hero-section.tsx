@@ -10,11 +10,12 @@ export function HeroSection() {
             Aidoe – AI for Healthcare
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl text-animate text-animate-delay-1">
-            Transforming healthcare with intelligence. Aidoe is an AI-driven
-            med-tech platform revolutionizing how hospitals and clinics deliver
-            care. Our cloud-based solutions empower medical teams to make
-            faster, smarter, and data-driven decisions—improving patient
-            outcomes while reducing operational workload.
+            Hospitals can often feel overwhelming, especially for individuals
+            who are unfamiliar with the environment or hesitant to ask
+            questions. Aidoe aims to solve this problem by providing intelligent
+            solutions that guides patients through every step of their
+            healthcare journey. Aidoe helps patients navigate hospitals with
+            confidence and ease.
           </p>
         </div>
         <div className="relative flex items-center justify-end md:order-2 pr-6 md:pr-12">
