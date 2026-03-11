@@ -63,6 +63,13 @@ export async function TechSaaSSection() {
         <p className="mt-16 text-center text-lg text-foreground/80 max-w-4xl mx-auto font-medium">
           {staticIntro}
         </p>
+
+        <h3 className="mt-10 text-center text-2xl font-semibold tracking-tight">
+          <span className="text-primary">Why Aidoe?</span>
+        </h3>
+        <p className="mt-4 text-center text-base md:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          Aidoe is not just about providing another digital tool for hospitals — it is about solving real problems that patients and healthcare systems face every day. Instead of simply offering a service, Aidoe aims to remove the barriers that exist between patients and healthcare systems, making hospitals more accessible, organized, and patient-friendly through smart AI-driven solutions.
+        </p>
       </div>
     </section>
   );

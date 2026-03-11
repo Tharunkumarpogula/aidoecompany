@@ -11,9 +11,20 @@ export default function ContactPage() {
         <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl text-animate">
           Contact Us
         </h1>
-        <p className="mt-4 max-w-2xl text-center text-lg text-muted-foreground mx-auto text-animate text-animate-delay-1">
-          We'd love to hear from you. Whether you have a question about features, trials, pricing, or anything else, our team is ready to answer all your questions.
-        </p>
+        <div className="mt-4 max-w-2xl text-center text-lg text-muted-foreground mx-auto text-animate text-animate-delay-1">
+          <p>
+            If you have any questions, partnership inquiries, or are interested in implementing Aidoe solutions in your hospital or clinic, feel free to reach out to us. We are always open to collaborating with healthcare institutions, technology partners, and organizations that share our vision of building smarter healthcare systems.
+          </p>
+          <p className="mt-4">
+            Email:{' '}
+            <Link href="mailto:aidoecompany@gmail.com" className="font-medium text-foreground underline underline-offset-4">
+              aidoecompany@gmail.com
+            </Link>
+          </p>
+          <p className="mt-4">
+            We look forward to connecting with you and contributing to the future of digital healthcare.
+          </p>
+        </div>
       </div>
 
       <div className="mt-16 grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-x-8 max-w-5xl mx-auto items-start">
@@ -30,7 +41,7 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <CardDescription className="group-hover:text-foreground transition-colors duration-300">
-                For any inquiries, please email us. We'll get back to you as soon as possible.
+                For any inquiries, please email us. We will get back to you as soon as possible.
               </CardDescription>
             </CardContent>
             <CardFooter>
