@@ -22,8 +22,8 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
         </linearGradient>
       </defs>
       <rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#igGrad)" strokeWidth="1.5" />
-      <path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="url(#igGrad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      <circle cx="17.5" cy="6.5" r="0.75" fill="url(#igGrad)"/>
+      <path d="M12 8.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z" stroke="url(#igGrad)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="17.5" cy="6.5" r="0.75" fill="url(#igGrad)" />
     </svg>
   );
 }
@@ -43,15 +43,8 @@ export function Header() {
           <Button variant="ghost" asChild>
             <Link href="/about">About</Link>
           </Button>
-          <Button variant="ghost" asChild>
-            <Link href="/request-demo">Request a Demo</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link href="/problem-statement">Problem Statement</Link>
-          </Button>
-          <Button variant="ghost" asChild>
-            <Link href="/solution">Solution</Link>
-          </Button>
+
+
           <Button variant="ghost" asChild>
             <Link href="/why-aidoe">Why Aidoe?</Link>
           </Button>
@@ -59,16 +52,7 @@ export function Header() {
             <Link href="/contact">Contact</Link>
           </Button>
 
-          <Button asChild>
-            <Link
-              href="https://wa.link/rrdhic"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp"
-            >
-              <i className="bi bi-whatsapp text-xl"></i>
-            </Link>
-          </Button>
+
 
           <Button asChild>
             <Link
